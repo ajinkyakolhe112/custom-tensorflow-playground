@@ -59,6 +59,16 @@ export function classifyTwoGaussData(numSamples: number, noise: number):
   let varianceScale = d3.scale.linear().domain([0, .5]).range([0.5, 4]);
   let variance = varianceScale(noise);
 
+  // Generate random centroids within a reasonable range
+  let radius = 5; // Maximum distance from origin
+  let angle1 = Math.random() * 2 * Math.PI;
+  let angle2 = (angle1 + Math.PI + (Math.random() - 0.5) * Math.PI) % (2 * Math.PI);
+  
+  let cx1 = radius * Math.cos(angle1);
+  let cy1 = radius * Math.sin(angle1);
+  let cx2 = radius * Math.cos(angle2);
+  let cy2 = radius * Math.sin(angle2);
+
   function genGauss(cx: number, cy: number, label: number) {
     for (let i = 0; i < numSamples / 2; i++) {
       let x = normalRandom(cx, variance);
@@ -67,8 +77,8 @@ export function classifyTwoGaussData(numSamples: number, noise: number):
     }
   }
 
-  genGauss(2, 2, 1); // Gaussian with positive examples.
-  genGauss(-2, -2, -1); // Gaussian with negative examples.
+  genGauss(cx1, cy1, 1); // Gaussian with positive examples
+  genGauss(cx2, cy2, -1); // Gaussian with negative examples
   return points;
 }
 
