@@ -12,7 +12,7 @@ This is a web-based neural network playground that allows you to experiment with
 
 ## Live Demo
 
-Visit the live demo at: https://ajinkyak.github.io/custom-tensorflow-playground
+Visit the live demo at: https://ajinkyakolhe112.github.io/custom-tensorflow-playground
 
 ## Local Development
 
@@ -20,7 +20,7 @@ To run this project locally:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/ajinkyak/custom-tensorflow-playground.git
+git clone https://github.com/ajinkyakolhe112/custom-tensorflow-playground.git
 cd custom-tensorflow-playground
 ```
 
